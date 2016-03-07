@@ -6,4 +6,4 @@ sudo ln -s /home/box/web/etc/gunicorn.conf   /etc/gunicorn.d/hello.py
 
 cd $PWD/web/
 #gunicorn -c /etc/gunicorn.d/hello.py -b 0.0.0.0:8080 hello:app
-./gunicorn -c /etc/gunicorn.d/hello.py hello:app
+gunicorn -c /etc/gunicorn.d/hello.py hello
