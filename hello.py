@@ -10,6 +10,3 @@ def application(environ, start_response):
     start_response(status, headers)
     body = "\n".join(environ["QUERY_STRING"].split("&"))
     return body
-
-if __name__ == '__main__':
-    pass
