@@ -6,5 +6,7 @@ sudo ln -sf /home/box/web/etc/guni-django.conf   /etc/gunicorn.d/guni-django.con
 #sudo /etc/init.d/gunicorn restart
 
 #gunicorn -c /etc/gunicorn.d/hello.py -b 0.0.0.0:8080 hello:app
-gunicorn -D -c /etc/gunicorn.d/hello.py hello
-gunicorn -D -c /etc/gunicorn.d/guni-django.conf
+gunicorn -c etc/gunicorn_conf.py hello:application &
+
+cd ask
+gunicorn -c ../etc/gunicorn_django_conf.py ask.wsgi --pythonpath '/home/box/web/ask' &
